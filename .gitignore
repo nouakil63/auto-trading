@@ -1,0 +1,45 @@
+# ============================================================
+# SECRETS — ne JAMAIS versionner (règle non négociable)
+# Toute config contenant des clés d'API doit matcher un de ces motifs.
+# ============================================================
+.env
+*.env
+!.env.example
+**/config-live*.json
+**/config-private*.json
+**/config-secret*.json
+**/*secrets*
+
+# ============================================================
+# Données et fichiers générés par freqtrade (lourds / locaux)
+# ============================================================
+user_data/data/
+user_data/logs/*
+!user_data/logs/.gitkeep
+user_data/backtest_results/
+user_data/hyperopt_results/
+user_data/hyperopts/
+user_data/plot/
+user_data/notebooks/
+user_data/freqaimodels/
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+*.log
+
+# ============================================================
+# Python
+# ============================================================
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.mypy_cache/
+.pytest_cache/
+
+# ============================================================
+# macOS / éditeurs
+# ============================================================
+.DS_Store
+.idea/
+.vscode/

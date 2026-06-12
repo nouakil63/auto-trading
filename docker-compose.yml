@@ -1,0 +1,21 @@
+# Lancement du bot freqtrade en DRY-RUN (argent fictif).
+# Basé sur le docker-compose officiel de freqtrade :
+# https://www.freqtrade.io/en/stable/docker_quickstart/
+#
+# Le port 8080 (FreqUI) n'est exposé que sur 127.0.0.1 :
+# l'interface web n'est accessible que depuis cette machine.
+services:
+  freqtrade:
+    image: freqtradeorg/freqtrade:stable
+    restart: unless-stopped
+    container_name: freqtrade
+    volumes:
+      - "./user_data:/freqtrade/user_data"
+    ports:
+      - "127.0.0.1:8080:8080"
+    command: >
+      trade
+      --logfile /freqtrade/user_data/logs/freqtrade.log
+      --db-url sqlite:////freqtrade/user_data/tradesv3.dryrun.sqlite
+      --config /freqtrade/user_data/config.json
+      --strategy SampleStrategy
