@@ -43,12 +43,19 @@ auto-trading/
 │   └── logs/                   # Logs du bot (non versionnés)
 ├── docs/
 │   └── strategie-et-backtest.md  # La stratégie expliquée + comment lire un backtest
+├── scripts/
+│   └── phase1.sh               # Déroulé guidé des étapes ci-dessous (optionnel)
 └── .gitignore                  # Exclut secrets, données, logs, bases SQLite
 ```
 
 ---
 
 ## Mise en route sur ton Mac
+
+> 🧭 Chaque étape ci-dessous peut aussi se lancer via `./scripts/phase1.sh`
+> (sans argument pour l'aide : `verifier` → `donnees` → `backtest` → `demarrer`).
+> Les commandes complètes restent détaillées ici pour que tu voies toujours
+> exactement ce qui s'exécute.
 
 ### Étape 0 — Prérequis
 
