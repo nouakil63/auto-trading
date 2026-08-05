@@ -44,7 +44,12 @@ auto-trading/
 ├── docs/
 │   └── strategie-et-backtest.md  # La stratégie expliquée + comment lire un backtest
 ├── scripts/
-│   └── phase1.sh               # Déroulé guidé des étapes ci-dessous (optionnel)
+│   ├── phase1.sh               # Déroulé guidé des étapes ci-dessous (optionnel)
+│   └── cloud/                  # Validation technique en environnement cloud
+│       │                       # (exchanges bloqués : données synthétiques, voir note*)
+│       ├── backtest_cloud.sh   # installer → donnees → backtest, sans Docker
+│       ├── freqtrade_offline.py       # lanceur freqtrade avec marchés statiques
+│       └── gen_donnees_synthetiques.py
 └── .gitignore                  # Exclut secrets, données, logs, bases SQLite
 ```
 
